@@ -75,7 +75,9 @@ $(document).ready(function() {
       });
       $("ul#phonenumbers").text("");
       newContact.phones.forEach(function(phone) {
-        $("ul#phonenumbers").append("<li>" + phone + "</li>");
+        //debugger;
+         var formattedPhone = "(" + phone.slice(0,3) + ")" + phone.slice(3, 6) + "-" + phone.slice(6, 10);
+        $("ul#phonenumbers").append("<li>" + formattedPhone + "</li>");
       });
       $("ul#emails").text("");
       newContact.emails.forEach(function(email) {
